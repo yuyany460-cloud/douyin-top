@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>抖音千万粉博主名录</title>
+<meta name="description" content="收录 44 位抖音千万粉以上博主，含领域分类、粉丝量级与个人简介。支持搜索、筛选与排序。">
+<meta name="theme-color" content="#0d0f14">
+
+<!-- 分享卡片 -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="抖音千万粉博主名录">
+<meta property="og:description" content="44 位抖音千万粉博主 · 领域分类 · 粉丝量级 · 简介，支持搜索与筛选。">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>抖音千万粉博主名录</h1>
+    <p class="sub" id="subtitle">加载中…</p>
+    <div class="stats" id="stats"></div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="controls">
+    <div class="search-wrap">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="16.5" y1="16.5" x2="21" y2="21"></line>
+      </svg>
+      <input type="search" id="q" placeholder="搜索昵称、简介、标签…" autocomplete="off">
+    </div>
+    <select id="sort" aria-label="排序方式">
+      <option value="followers-desc">粉丝数：高 → 低</option>
+      <option value="followers-asc">粉丝数：低 → 高</option>
+      <option value="name">昵称排序</option>
+      <option value="category">按领域分组</option>
+    </select>
+  </section>
+
+  <section class="chips" id="chips" aria-label="领域筛选"></section>
+
+  <section class="grid" id="grid"></section>
+
+  <p class="empty" id="empty" hidden>没有匹配的博主，换个条件试试。</p>
+
+</main>
+
+<footer class="wrap">
+  <div class="note" id="note"></div>
+</footer>
+
+<!-- 数据必须先于 app.js 加载。
+     浏览器直接打开本地 HTML 时 fetch('data.json') 会被 CORS 拦截，
+     所以数据包成 JS 变量注入（data.js）。 -->
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
